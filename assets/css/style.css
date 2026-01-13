@@ -1,0 +1,136 @@
+:root{
+    --p-color:black;
+    --s-color:grey;
+    --t-color:cyan;
+    --q-color:white;
+    --font:"Raleway",sans-serif;
+}
+
+/****reset box****/
+html {
+  	box-sizing: border-box;
+	font-size:16px;
+    font-family: var(--font);
+    scroll-behavior: smooth;
+}
+*, *:before, *:after {
+  box-sizing: inherit;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+}
+
+/*****menu******/
+.menu{
+    position: sticky;
+    top: 0;
+    width: 100%;
+    height: 60px;
+    background-color: var(--q-color);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 500;
+}
+.menu__first{
+    width: 100%;
+    height: auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.menu__img{
+    width: 130px;
+    height: 60px;
+    object-fit: contain;
+    object-position: center;
+}
+.menu__options{
+    display: none;
+    
+}
+.menu__options--show{
+    position: fixed;
+    top:0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    width: 50%;
+    height: 100vh;
+    background-color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+    align-items: center;
+    z-index: 500;
+    padding: 2rem;
+}
+.menu__options > a{
+    text-decoration: none;
+    padding: 0.2rem;
+    color: var(--s-color);
+    font-size: 1.2rem;
+}
+.menu__options > a:hover{
+    color: var(--t-color);
+    transition: color 1s ease-in;
+}
+/****hero image ****/
+.heroimg{
+    position: relative;
+    width: 100%;
+    height: 200px;
+    z-index: 100;
+}
+.heroimg__img{
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    object-position: center;
+    filter:blur(0.1rem);
+    
+}
+.heroimg__p{
+    position: absolute;
+    top:50%;
+    left: 50%;
+    width: 100%;
+    color: var(--t-color);
+    font-size: 1.5rem;
+    text-align: center;
+    transform: translate(-50%,-50%);
+    margin: 0;
+    z-index: 100;
+}
+
+@media screen and (min-width:48em){
+    .hamburger{
+        display: none;
+    }
+    .menu__options{ 
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding: 0.5rem;
+    }
+    .menu__options > a{
+        padding: 0 0.5rem;
+    }
+    .menu__options--show{
+    position: static;
+    width: 100%;
+    height: auto;
+    background-color: none;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    z-index: 500;
+    padding: 0;
+}
+    
+        
+    
+}
